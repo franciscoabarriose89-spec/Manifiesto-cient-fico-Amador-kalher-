@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{float}
 \usepackage[round]{natbib}
 
 \onehalfspacing
@@ -30,17 +31,17 @@
 \maketitle
 
 \begin{abstract}
-This paper presents a formal academic framework for the study of arithmetic decomposition and a generalized Amador-Kähler coherence index. The objective is to construct a mathematically disciplined model that allows for rigorous symbolic reasoning, reproducible numeric evaluation, and conceptual extension across scientific domains. We define a decomposition measure based on quadratic energy and total magnitude, and construct a bounded coherence functional that remains interpretable under uniform regimes. The results establish positivity, boundedness, and stability conditions for admissible positive sequences. This version includes a technical appendix and numerical validation tables suitable for international academic review and scientific reproducibility.
+This paper presents a formal academic framework for the study of arithmetic decomposition and a generalized Amador-Kähler coherence index. The objective is to construct a mathematically disciplined model that allows for rigorous symbolic reasoning, reproducible numerical evaluation, and conceptual extension across scientific domains. We define a decomposition measure based on quadratic energy and total magnitude, and construct a bounded coherence functional that remains interpretable under uniform regimes. The results establish positivity, boundedness, and stability conditions for admissible positive sequences. This version includes a dedicated experimental methods section and complete appendices suitable for international academic review, computational replication, and formal scientific documentation.
 \end{abstract}
 
-\noindent\textbf{Keywords:} arithmetic decomposition, Amador-Kähler framework, coherence index, mathematical formalization, scientific methodology, reproducible proof, technical appendix, numerical validation.
+\noindent\textbf{Keywords:} arithmetic decomposition, Amador-Kähler framework, coherence index, mathematical formalization, scientific methodology, reproducible proof, experimental methods, technical appendices.
 
 \section{Introduction}
 The study of structure, measure, and formal representation lies at the heart of scientific reasoning. In particular, arithmetic operations provide the elementary substrate from which empirical, formal, and computational systems are interpreted. Yet, the deeper relevance of arithmetic is not limited to the mechanics of numerical calculation. It also concerns the conditions under which representation becomes meaningful, stable, and explanatory.
 
 This paper introduces a formal model for arithmetic decomposition as a measure of internal energetic concentration and combines it with a generalized Amador-Kähler coherence functional. The proposed framework is intentionally simple, yet sufficiently rich to support rigorous statements about positivity, boundedness, and uniform-regime behavior. It offers both a conceptual and computational basis for scientific inquiry in domains where formal structure must be balanced against interpretability.
 
-This version extends the original framework with a technical appendix and explicit numerical results to support review, replication, and further development in a globally standardized research context.
+The present version extends the original framework with an explicit experimental methodology section and complete appendices. This is intended to align the work more closely with international standards for reproducibility, computational validation, and transparent scholarly communication.
 
 \section{Formal Foundation}
 Let $x=(x_1,\ldots,x_n)$ be an admissible vector in $\mathbb{R}_{>0}^n$. Define the vector mass and quadratic energy by
@@ -74,6 +75,53 @@ The construction rests on four principles.
 \item \textbf{Boundedness.} The coherence measure is normalized into the unit interval.
 \item \textbf{Stability.} The model remains regular under repeated uniform values.
 \item \textbf{Interoperability.} The formalism can be implemented and tested in multiple languages and research environments.
+\end{enumerate}
+
+\section{Experimental Methods}
+\subsection{Goal of the experimental design}
+The experimental method is designed to validate the mathematical framework under controlled numerical conditions. The objective is to test whether the theoretical claims about positivity, boundedness, and uniform-regime behavior are preserved in actual computational evaluation.
+
+\subsection{Input construction}
+For each test, a vector $x \in \mathbb{R}_{>0}^n$ is generated or specified explicitly. The method distinguishes between two classes of inputs:
+
+\begin{enumerate}[label=\arabic*.]
+\item \textbf{General positive vectors.} Examples include nonuniform sequences of positive values such as $x=(1,2,3,4)$ and other random positive configurations.
+\item \textbf{Uniform vectors.} Special cases of the form $x=(c,\ldots,c)$ for constant $c>0$ and size $n$.
+\end{enumerate}
+
+The uniform regime is particularly important because it enables analytic verification of the model's behavior.
+
+\subsection{Quantities measured}
+For each vector $x$, the following quantities are computed:
+\begin{equation}
+T(x)=\sum_{i=1}^{n}x_i,
+\qquad
+E(x)=\sum_{i=1}^{n}x_i^2,
+\qquad
+\mathcal{D}(x)=\frac{E(x)}{T(x)+1},
+\qquad
+\mathcal{K}(x)=1-\exp\left(-\frac{\mathcal{D}(x)}{\max\{1,n\}}\right).
+\end{equation}
+
+\subsection{Validation criteria}
+A configuration is considered valid when the following computational checks hold:
+\begin{enumerate}[label=\arabic*.]
+\item $\mathcal{D}(x)\ge 0$;
+\item $0\le\mathcal{K}(x)<1$;
+\item in the uniform regime, $\mathcal{D}(x)=\dfrac{nc^2}{nc+1}$;
+\item the measured index increases monotonically with the parameter $c$ in the uniform family.
+\end{enumerate}
+
+\subsection{Computational implementation}
+The numerical experiments are executed in both Python and C++ using the same mathematical definitions. The independent implementation in two languages reduces the risk of language-specific numerical artifacts and strengthens reproducibility.
+
+The algorithmic sequence is:
+\begin{enumerate}[label=\arabic*.]
+\item read or define the positive vector;
+\item compute $T(x)$ and $E(x)$;
+\item evaluate $\mathcal{D}(x)$ and $\mathcal{K}(x)$;
+\item validate the inequalities and the uniform formula;
+\item report the results in tabular form.
 \end{enumerate}
 
 \section{Core Theoretical Results}
@@ -158,16 +206,6 @@ The formalism above offers a compact model for assessing how dispersed or concen
 
 This interpretation is useful in settings where one wants to compare systems of different sizes but comparable structure. The model is especially natural in formal scientific workflows that require a scalar descriptor with well-defined bounds, monotonicity, and computational reproducibility.
 
-\section{Computational Validation}
-To ensure reproducibility, the model is implemented both in Python and C++. The algorithms use the same definitions and test the following conditions:
-\begin{enumerate}[label=\arabic*.]
-\item $\mathcal{D}(x)\ge 0$;
-\item $0\le \mathcal{K}(x)<1$;
-\item uniform setting: $\mathcal{D}(c,\ldots,c)=nc^2/(nc+1)$.
-\end{enumerate}
-
-The implementation is intentionally minimal, making it easy to verify across different numerical environments.
-
 \section{Numerical Results}
 The following table reports representative values computed under the proposed model.
 
@@ -195,8 +233,7 @@ This article introduces a mathematically consistent and computationally traceabl
 The framework is not presented as a closed doctrine, but as a formally grounded working architecture that can be refined, generalized, and integrated into larger research programs. It is therefore appropriate for academic development, reproducible experimentation, and international scientific dissemination.
 
 \appendix
-\section{Technical Appendix}
-\subsection{Appendix A: Formal derivation of the decomposition measure}
+\section{Technical Appendix A: Formal derivation of the decomposition measure}
 Let $x\in\mathbb{R}_{>0}^n$. The arithmetic decomposition index is constructed from the quadratic energy $E(x)$ and the total magnitude $T(x)$. The denominator uses $T(x)+1$ instead of $T(x)$ alone to avoid singular behavior near zero and to ensure numerical continuity in low-mass regimes. This design preserves three desirable properties:
 
 \begin{enumerate}[label=\arabic*.]
@@ -207,7 +244,7 @@ Let $x\in\mathbb{R}_{>0}^n$. The arithmetic decomposition index is constructed f
 
 The resulting model is therefore appropriate for scientific analysis when both magnitude and concentration are relevant variables.
 
-\subsection{Appendix B: Computational reproducibility}
+\section{Technical Appendix B: Computational reproducibility}
 The computational experiments used the following logic:
 \begin{enumerate}[label=\arabic*.]
 \item Compute $T(x)=\sum_i x_i$;
@@ -219,8 +256,31 @@ The computational experiments used the following logic:
 
 The same logic is implemented in both Python and C++, which allows cross-language verification and improves confidence in the final results.
 
-\subsection{Appendix C: Reproducibility notes}
-The numerical validation is intentionally simple and transparent. It does not rely on opaque optimization methods or non-standard scientific libraries. Instead, it relies on direct algebraic evaluation and standard numerical functions, making it suitable for research review and educational replication.
+\section{Technical Appendix C: Reproducibility protocol}
+The following protocol was used to conduct the numerical verification:
+\begin{enumerate}[label=\arabic*.]
+\item Define a positive vector $x$.
+\item Evaluate $T(x)$ and $E(x)$ using standard exact arithmetic or double precision numerical computation.
+\item Apply the formulae for $\mathcal{D}(x)$ and $\mathcal{K}(x)$ directly.
+\item Compare against the identities stated in the propositions.
+\item Record the outputs in tabular form for reproducibility.
+\end{enumerate}
+
+This protocol is intentionally minimal, transparent, and language-agnostic so that it can be independently replicated by other researchers.
+
+\section{Technical Appendix D: Source-code and implementation summary}
+The implementation files used for validation are as follows:
+\begin{itemize}
+\item Python proof module: \texttt{code/python/ak\_proof\_demo.py}
+\item C++ proof module: \texttt{code/cpp/ak\_proof\_demo.cpp}
+\end{itemize}
+
+Both implementations execute the same mathematically defined pipeline and confirm the following established facts:
+\begin{enumerate}[label=\arabic*.]
+\item $\mathcal{D}(x)\ge 0$;
+\item $0\le\mathcal{K}(x)<1$;
+\item the uniform case satisfies $\mathcal{D}(c,\ldots,c)=\frac{nc^2}{nc+1}$.
+\end{enumerate}
 
 \bibliographystyle{plainnat}
 \bibliography{academic_dossier}

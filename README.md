@@ -1,15 +1,31 @@
-# Updating the repository dossier for international scientific review
+# Experimental Methods and Full Appendices
 
-This version includes:
+This repository includes a version of the scientific dossier with:
 
-- technical appendix in the LaTeX article
-- numerical results table for the paper
-- reproducibility notes for computational validation
+- a formal experimental methods section;
+- complete appendices for technical derivation and reproducibility;
+- numerical validation results; and
+- implementation notes for both Python and C++.
 
-The main article remains in:
+## Main article
 
 - `docs/academic_dossier.tex`
 
-The numeric appendix is in:
+## Supplementary notes
 
 - `docs/numeric_results.md`
+
+## Reproducibility assets
+
+- `code/python/ak_proof_demo.py`
+- `code/cpp/ak_proof_demo.cpp`
+
+## Summary
+
+The experimental methods section covers:
+
+- construction of admissible positive vectors;
+- quantity definitions and validation criteria;
+- numerical verification strategy;
+- cross-language reproducibility;
+- formal appendices for research review.
