@@ -1,41 +1,15 @@
-# Manifesto Científico Amador-Kähler
+# Updating the repository dossier for international scientific review
 
-Este repositorio contiene una versión académica formal del marco conceptual asociado a la deconstrucción aritmética y al índice de coherencia Amador-Kähler. La estructura actual incluye una versión de artículo científico, demostraciones rigurosas, y validación computacional reproducible.
+This version includes:
 
-## Componentes del dossier
+- technical appendix in the LaTeX article
+- numerical results table for the paper
+- reproducibility notes for computational validation
 
-- `docs/academic_dossier.tex` : manuscrito científico formal con abstract, metodología, proposiciones, teoremas y bibliografía.
-- `docs/academic_dossier.bib` : referencias bibliográficas mínimas.
-- `code/python/ak_proof_demo.py` : validación formal en Python puro.
-- `code/cpp/ak_proof_demo.cpp` : validación formal en C++.
+The main article remains in:
 
-## Artículo científico
+- `docs/academic_dossier.tex`
 
-La versión actual del dossier tiene un formato orientado a la academia internacional:
+The numeric appendix is in:
 
-- abstract y palabras clave;
-- introducción; 
-- fundamentos formales;
-- principios metodológicos;
-- resultados principales con pruebas;
-- interpretación científica;
-- validación computacional;
-- conclusiones.
-
-## Ejecución
-
-### Python
-
-```bash
-python3 code/python/ak_proof_demo.py
-```
-
-### C++
-
-```bash
-g++ -std=c++17 code/cpp/ak_proof_demo.cpp -o ak_demo && ./ak_demo
-```
-
-## Estado
-
-La versión actual está preparada para una revisión académica formal y puede extenderse con nuevas secciones, datos experimentales o anexos especializados.
+- `docs/numeric_results.md`
