@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+\onehalfspacing
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\title{Formal Demonstrative Dossier for Arithmetic Deconstruction and the Amador-Kähler Framework}
+\author{Research Working Draft}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document formalizes a compact mathematical framework for the study of arithmetic decomposition and a generalized Amador-Kähler coherence measure. The objective is to provide a rigorous working foundation for academic discussion, symbolic validation, and reproducible computational verification. The formal statements included herein establish positivity, boundedness, and uniform-regime stability for the proposed model.
+\end{abstract}
+
+\section*{Resumen}
+Se formaliza un marco matemático compacto para el estudio de la deconstrucción aritmética y de una medida generalizada de coherencia Amador-Kähler. El propósito es aportar una base rigurosa para discusión académica, validación simbólica y verificación computacional reproducible. Las afirmaciones formales establecidas demuestran positividad, acotación y estabilidad en régimen uniforme para el modelo propuesto.
+
+\section{Formal setting}
+Let $x=(x_1,\ldots,x_n)$ be a finite vector of positive real numbers. Define the total mass
+\begin{equation}
+T(x)=\sum_{i=1}^{n}x_i,
+\end{equation}
+
+and the quadratic energy
+\begin{equation}
+E(x)=\sum_{i=1}^{n}x_i^2.
+\end{equation}
+
+We define the arithmetic decomposition index by
+\begin{equation}
+\mathcal{D}(x)=\frac{E(x)}{T(x)+1}.
+\end{equation}
+
+The Amador-Kähler coherence index is then defined by
+\begin{equation}
+\mathcal{K}(x)=1-\exp\left(-\frac{\mathcal{D}(x)}{\max\{1,n\}}\right).
+\end{equation}
+
+This model is designed to preserve interpretability, boundedness, and monotonic behavior under uniform scaling and regular composition.
+
+\section{Definitions}
+\begin{definition}
+A sequence $x=(x_1,\ldots,x_n)$ is called admissible if $x_i>0$ for all $i=1,\ldots,n$.
+\end{definition}
+
+\begin{definition}
+The arithmetic decomposition index of an admissible sequence $x$ is
+\begin{equation}
+\mathcal{D}(x)=\frac{\sum_{i=1}^{n}x_i^2}{\sum_{i=1}^{n}x_i+1}.
+\end{equation}
+\end{definition}
+
+\begin{definition}
+The Amador-Kähler coherence index is
+\begin{equation}
+\mathcal{K}(x)=1-e^{-\mathcal{D}(x)/\max\{1,n\}}.
+\end{equation}
+\end{definition}
+
+\section{Theoretical propositions}
+\begin{proposition}
+For every admissible finite sequence $x$, the arithmetic decomposition index satisfies
+\begin{equation}
+\mathcal{D}(x)\ge 0.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Since $x_i>0$, we have $x_i^2\ge 0$ for every $i$. Therefore
+\begin{equation}
+E(x)=\sum_{i=1}^{n}x_i^2 \ge 0.
+\end{equation}
+Also, $T(x)+1>0$, because $T(x)=\sum_{i=1}^{n}x_i>0$. Hence the quotient is non-negative:
+\begin{equation}
+\mathcal{D}(x)=\frac{E(x)}{T(x)+1}\ge 0.
+\end{equation}
+\end{proof}
+
+\begin{proposition}
+For every admissible sequence $x$, the coherence index satisfies
+\begin{equation}
+0\le \mathcal{K}(x)<1.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+From Proposition 1, $\mathcal{D}(x)\ge 0$. Let
+\begin{equation}
+\alpha = \frac{\mathcal{D}(x)}{\max\{1,n\}} \ge 0.
+\end{equation}
+Then $e^{-\alpha}\in (0,1]$. Consequently,
+\begin{equation}
+\mathcal{K}(x)=1-e^{-\alpha}.
+\end{equation}
+Since $e^{-\alpha}>0$, we obtain $\mathcal{K}(x)<1$; since $e^{-\alpha}\le 1$, we obtain $\mathcal{K}(x)\ge 0$. Hence $0\le \mathcal{K}(x)<1$.
+\end{proof}
+
+\begin{proposition}[Uniform regime]
+If $x=(c,\ldots,c)$ with $n$ repetitions of the constant $c>0$, then
+\begin{equation}
+\mathcal{D}(x)=\frac{n c^2}{n c + 1}.
+\end{equation}
+Moreover, $\mathcal{D}(x)$ is strictly increasing in $c$.
+\end{proposition}
+
+\begin{proof}
+In the uniform case, $x_i=c$ for all $i$, so
+\begin{equation}
+E(x)=\sum_{i=1}^{n} c^2 = n c^2,
+\end{equation}
+egin{equation}
+T(x)=\sum_{i=1}^{n} c = n c.
+\end{equation}
+Therefore,
+\begin{equation}
+\mathcal{D}(x)=\frac{n c^2}{n c + 1}.
+\end{equation}
+Differentiate with respect to $c$:
+\begin{equation}
+\frac{d}{dc}\mathcal{D}(x)=\frac{2n c (nc+1)-n c^2(n)}{(nc+1)^2}
+=\frac{n c (nc+2)}{(nc+1)^2}>0.
+\end{equation}
+Hence $\mathcal{D}(x)$ is strictly increasing in $c$.
+\end{proof}
+
+\begin{corollary}
+In the uniform regime, the Amador-Kähler coherence index is monotone increasing in $c$ as well.
+\end{corollary}
+
+\begin{proof}
+Since $\mathcal{K}(x)=1-e^{-\mathcal{D}(x)/\max\{1,n\}}$ and the exponential map is decreasing, an increase in $\mathcal{D}(x)$ yields an increase in $\mathcal{K}(x)$.
+\end{proof}
+
+\section{Computational verification}
+The following numerical routine validates the propositions above in a reproducible environment.
+
+\begin{itemize}
+\item Python implementation: \texttt{code/python/ak	extunderscore proof	extunderscore demo.py}
+\item C++ implementation: \texttt{code/cpp/ak	extunderscore proof	extunderscore demo.cpp}
+\end{itemize}
+
+Both implementations verify the following conditions:
+\begin{enumerate}[label=\arabic*.]
+\item $\mathcal{D}(x)\ge 0$;
+\item $0\le \mathcal{K}(x)<1$;
+\item uniform regime: $\mathcal{D}(c,\ldots,c)=nc^2/(nc+1)$.
+\end{enumerate}
+
+\section{Conclusion}
+The proposed formalization provides a compact theoretical basis for arithmetic decomposition and coherence evaluation under a generalized Amador-Kähler lens. The mathematical structure is intentionally minimal, yet it is robust enough to be tested computationally, discussed academically, and expanded with domain-specific refinements. This document therefore constitutes a reproducible working framework suitable for further scholarly development.
+
+\bibliographystyle{plain}
+\bibliography{academic_dossier}
+
+\end{document}
