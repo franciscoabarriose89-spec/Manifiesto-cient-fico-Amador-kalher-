@@ -1,24 +1,28 @@
 # Manifesto Científico Amador-Kähler
 
-Este repositorio reúne una versión formal y demostrativa del marco conceptual asociado a la deconstrucción aritmética y al Marco Amador-Kähler. El objetivo es ofrecer una base académica utilizable para revisión, validación y divulgación en entornos de investigación de nivel internacional.
+Este repositorio contiene una versión académica formal del marco conceptual asociado a la deconstrucción aritmética y al índice de coherencia Amador-Kähler. La estructura actual incluye una versión de artículo científico, demostraciones rigurosas, y validación computacional reproducible.
 
-## Estructura
+## Componentes del dossier
 
-- `docs/academic_dossier.tex` : manuscrito académico en LaTeX, con formulación, definiciones, teoremas y demostraciones.
-- `docs/academic_dossier.bib` : bibliografía mínima compatible con formatos científicos globales.
-- `code/python/ak_proof_demo.py` : demostraciones rigurosas en Python puro.
-- `code/cpp/ak_proof_demo.cpp` : versión equivalente en C++.
+- `docs/academic_dossier.tex` : manuscrito científico formal con abstract, metodología, proposiciones, teoremas y bibliografía.
+- `docs/academic_dossier.bib` : referencias bibliográficas mínimas.
+- `code/python/ak_proof_demo.py` : validación formal en Python puro.
+- `code/cpp/ak_proof_demo.cpp` : validación formal en C++.
 
-## Objetivo científico
+## Artículo científico
 
-El proyecto formaliza una métrica de descomposición aritmética y un índice de coherencia Amador-Kähler para secuencias positivas de datos. Las demostraciones incluidas verifican propiedades fundamentales como:
+La versión actual del dossier tiene un formato orientado a la academia internacional:
 
-- no negatividad;
-- acotación del índice de coherencia;
-- estabilidad en el caso uniforme;
-- comportamiento cuantitativo en régimen constante.
+- abstract y palabras clave;
+- introducción; 
+- fundamentos formales;
+- principios metodológicos;
+- resultados principales con pruebas;
+- interpretación científica;
+- validación computacional;
+- conclusiones.
 
-## Cómo ejecutar las pruebas
+## Ejecución
 
 ### Python
 
@@ -29,10 +33,9 @@ python3 code/python/ak_proof_demo.py
 ### C++
 
 ```bash
-g++ -std=c++17 code/cpp/ak_proof_demo.cpp -o ak_demo
-./ak_demo
+g++ -std=c++17 code/cpp/ak_proof_demo.cpp -o ak_demo && ./ak_demo
 ```
 
-## Nota metodológica
+## Estado
 
-Las formulaciones presentadas tienen carácter de prototipo formal para revisión académica. Se integran como demostraciones de consistencia y validación simbólica dentro del marco conceptual del repositorio.
+La versión actual está preparada para una revisión académica formal y puede extenderse con nuevas secciones, datos experimentales o anexos especializados.
