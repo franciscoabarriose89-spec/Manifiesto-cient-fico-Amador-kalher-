@@ -1,31 +1,22 @@
-# Experimental Methods and Full Appendices
+# Preprint final
 
-This repository includes a version of the scientific dossier with:
+This repository contains the final preprint version of the scientific dossier on arithmetic decomposition and the Amador-Kähler coherence framework.
 
-- a formal experimental methods section;
-- complete appendices for technical derivation and reproducibility;
-- numerical validation results; and
-- implementation notes for both Python and C++.
+## Files
 
-## Main article
+- `docs/academic_dossier.tex` — final preprint manuscript
+- `docs/numeric_results.md` — numerical validation summary
+- `README.md` — repository overview
+- `code/python/ak_proof_demo.py` — Python validation
+- `code/cpp/ak_proof_demo.cpp` — C++ validation
 
-- `docs/academic_dossier.tex`
+## Scope of the preprint
 
-## Supplementary notes
+- formal definitions
+- theoretical propositions and proofs
+- experimental validation
+- numerical results
+- reproducibility protocol
+- technical appendices
 
-- `docs/numeric_results.md`
-
-## Reproducibility assets
-
-- `code/python/ak_proof_demo.py`
-- `code/cpp/ak_proof_demo.cpp`
-
-## Summary
-
-The experimental methods section covers:
-
-- construction of admissible positive vectors;
-- quantity definitions and validation criteria;
-- numerical verification strategy;
-- cross-language reproducibility;
-- formal appendices for research review.
+This version is suitable for academic review and for conversion into a publication-ready manuscript.

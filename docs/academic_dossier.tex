@@ -11,6 +11,7 @@
 \usepackage{longtable}
 \usepackage{float}
 \usepackage[round]{natbib}
+\usepackage{abstract}
 
 \onehalfspacing
 
@@ -22,29 +23,28 @@
 \newtheorem{corollary}{Corollary}
 \newtheorem{remark}{Remark}
 
-\title{Formal Scientific Article on Arithmetic Deconstruction and the Amador-Kähler Coherence Framework}
+\title{A Formal Preprint on Arithmetic Deconstruction and the Amador-Kähler Coherence Framework}
 \author{Research Working Draft}
 \date{\today}
 
 \begin{document}
-
 \maketitle
 
 \begin{abstract}
-This paper presents a formal academic framework for the study of arithmetic decomposition and a generalized Amador-Kähler coherence index. The objective is to construct a mathematically disciplined model that allows for rigorous symbolic reasoning, reproducible numerical evaluation, and conceptual extension across scientific domains. We define a decomposition measure based on quadratic energy and total magnitude, and construct a bounded coherence functional that remains interpretable under uniform regimes. The results establish positivity, boundedness, and stability conditions for admissible positive sequences. This version includes a dedicated experimental methods section and complete appendices suitable for international academic review, computational replication, and formal scientific documentation.
+This paper introduces a compact mathematical framework for analyzing arithmetic decomposition and a generalized Amador-Kähler coherence functional. The goal is to provide a formally transparent model that supports rigorous symbolic reasoning, reproducible numerical testing, and conceptual extension across scientific disciplines. We define the decomposition index as a normalized quadratic-energy measure over positive vectors and derive a bounded coherence score in the unit interval. The formal results establish non-negativity, boundedness, and monotone behavior under uniform configurations. The framework is intentionally simple, yet suitable for academic review, computational replication, and further theoretical generalization.
 \end{abstract}
 
-\noindent\textbf{Keywords:} arithmetic decomposition, Amador-Kähler framework, coherence index, mathematical formalization, scientific methodology, reproducible proof, experimental methods, technical appendices.
+\noindent\textbf{Keywords:} arithmetic decomposition, Amador-Kähler framework, coherence index, mathematical formalization, reproducible research, preprint, numerical validation.
 
 \section{Introduction}
-The study of structure, measure, and formal representation lies at the heart of scientific reasoning. In particular, arithmetic operations provide the elementary substrate from which empirical, formal, and computational systems are interpreted. Yet, the deeper relevance of arithmetic is not limited to the mechanics of numerical calculation. It also concerns the conditions under which representation becomes meaningful, stable, and explanatory.
+The formalization of knowledge requires a careful balance between symbolic rigor and interpretive flexibility. In scientific practice, even the most elementary objects—such as positive magnitude vectors and arithmetic aggregates—can be reinterpreted as structural evidences of deeper conceptual organization. This observation is central to the present work.
 
-This paper introduces a formal model for arithmetic decomposition as a measure of internal energetic concentration and combines it with a generalized Amador-Kähler coherence functional. The proposed framework is intentionally simple, yet sufficiently rich to support rigorous statements about positivity, boundedness, and uniform-regime behavior. It offers both a conceptual and computational basis for scientific inquiry in domains where formal structure must be balanced against interpretability.
+The objective of this preprint is to present a mathematically coherent framework for measuring internal concentration and coherence in positive data structures. To this end, we define an arithmetic decomposition metric based on quadratic energy and total magnitude, and we embed it in a bounded coherence functional inspired by the Amador-Kähler perspective. The resulting formulation is simple enough to remain transparent, while sufficiently structured to support formal claims and computational verification.
 
-The present version extends the original framework with an explicit experimental methodology section and complete appendices. This is intended to align the work more closely with international standards for reproducibility, computational validation, and transparent scholarly communication.
+This document is intentionally written in a preprint style: it is concise, formal, and oriented toward scientific evaluation. It gives complete definitions, rigorous statements, and reproducible validation procedures suitable for review in an international research context.
 
-\section{Formal Foundation}
-Let $x=(x_1,\ldots,x_n)$ be an admissible vector in $\mathbb{R}_{>0}^n$. Define the vector mass and quadratic energy by
+\section{Formal framework}
+Let $x=(x_1,\ldots,x_n)$ be an admissible vector in $\mathbb{R}_{>0}^n$. Define
 \begin{equation}
 T(x)=\sum_{i=1}^{n}x_i, \qquad E(x)=\sum_{i=1}^{n}x_i^2.
 \end{equation}
@@ -56,7 +56,7 @@ The arithmetic decomposition index of $x$ is
 \end{equation}
 \end{definition}
 
-The additive term $+1$ prevents degeneracy in the low-mass regime and preserves regularity when the total mass is close to zero.
+The additive unit in the denominator ensures regularity in low-mass regimes and prevents pathological degeneracy when the sum of the components is small.
 
 \begin{definition}
 The Amador-Kähler coherence index is defined by
@@ -65,72 +65,24 @@ The Amador-Kähler coherence index is defined by
 \end{equation}
 \end{definition}
 
-This index maps the decomposition measure into a bounded interval in $[0,1)$.
+This produces a bounded score in the interval $[0,1)$, allowing direct comparison across different positive vectors.
 
-\section{Methodological Principles}
-The construction rests on four principles.
+\section{Methodological principles}
+The model is grounded in four principles.
 
 \begin{enumerate}[label=\textbf{P\arabic*.}]
 \item \textbf{Positivity.} All admissible magnitudes are strictly positive.
-\item \textbf{Boundedness.} The coherence measure is normalized into the unit interval.
-\item \textbf{Stability.} The model remains regular under repeated uniform values.
-\item \textbf{Interoperability.} The formalism can be implemented and tested in multiple languages and research environments.
+\item \textbf{Boundedness.} The coherence functional remains normalized in the unit interval.
+\item \textbf{Stability.} The model preserves regularity in uniform regimes.
+\item \textbf{Reproducibility.} The method can be implemented and verified in different computational languages.
 \end{enumerate}
 
-\section{Experimental Methods}
-\subsection{Goal of the experimental design}
-The experimental method is designed to validate the mathematical framework under controlled numerical conditions. The objective is to test whether the theoretical claims about positivity, boundedness, and uniform-regime behavior are preserved in actual computational evaluation.
-
-\subsection{Input construction}
-For each test, a vector $x \in \mathbb{R}_{>0}^n$ is generated or specified explicitly. The method distinguishes between two classes of inputs:
-
-\begin{enumerate}[label=\arabic*.]
-\item \textbf{General positive vectors.} Examples include nonuniform sequences of positive values such as $x=(1,2,3,4)$ and other random positive configurations.
-\item \textbf{Uniform vectors.} Special cases of the form $x=(c,\ldots,c)$ for constant $c>0$ and size $n$.
-\end{enumerate}
-
-The uniform regime is particularly important because it enables analytic verification of the model's behavior.
-
-\subsection{Quantities measured}
-For each vector $x$, the following quantities are computed:
-\begin{equation}
-T(x)=\sum_{i=1}^{n}x_i,
-\qquad
-E(x)=\sum_{i=1}^{n}x_i^2,
-\qquad
-\mathcal{D}(x)=\frac{E(x)}{T(x)+1},
-\qquad
-\mathcal{K}(x)=1-\exp\left(-\frac{\mathcal{D}(x)}{\max\{1,n\}}\right).
-\end{equation}
-
-\subsection{Validation criteria}
-A configuration is considered valid when the following computational checks hold:
-\begin{enumerate}[label=\arabic*.]
-\item $\mathcal{D}(x)\ge 0$;
-\item $0\le\mathcal{K}(x)<1$;
-\item in the uniform regime, $\mathcal{D}(x)=\dfrac{nc^2}{nc+1}$;
-\item the measured index increases monotonically with the parameter $c$ in the uniform family.
-\end{enumerate}
-
-\subsection{Computational implementation}
-The numerical experiments are executed in both Python and C++ using the same mathematical definitions. The independent implementation in two languages reduces the risk of language-specific numerical artifacts and strengthens reproducibility.
-
-The algorithmic sequence is:
-\begin{enumerate}[label=\arabic*.]
-\item read or define the positive vector;
-\item compute $T(x)$ and $E(x)$;
-\item evaluate $\mathcal{D}(x)$ and $\mathcal{K}(x)$;
-\item validate the inequalities and the uniform formula;
-\item report the results in tabular form.
-\end{enumerate}
-
-\section{Core Theoretical Results}
+\section{Theoretical results}
 \begin{lemma}
 For every admissible vector $x\in\mathbb{R}_{>0}^n$, we have $T(x)>0$ and $E(x)\ge 0$.
 \end{lemma}
-
 \begin{proof}
-Since each component satisfies $x_i>0$, their sum is strictly positive and their squared values are non-negative. Therefore $T(x)>0$ and $E(x)=\sum_i x_i^2\ge 0$.
+Each component satisfies $x_i>0$, hence $T(x)=\sum_i x_i>0$ and $x_i^2\ge 0$ for all $i$. Summing yields $E(x)\ge 0$.
 \end{proof}
 
 \begin{theorem}
@@ -139,76 +91,70 @@ For every admissible vector $x\in\mathbb{R}_{>0}^n$, the arithmetic decompositio
 \mathcal{D}(x)\ge 0.
 \end{equation}
 \end{theorem}
-
 \begin{proof}
-From Lemma 1, $E(x)\ge 0$ and $T(x)+1>0$. Therefore,
+From the previous lemma, $E(x)\ge 0$ and $T(x)+1>0$. Therefore,
 \begin{equation}
 \mathcal{D}(x)=\frac{E(x)}{T(x)+1}\ge 0.
 \end{equation}
 \end{proof}
 
 \begin{theorem}
-For every admissible vector $x\in\mathbb{R}_{>0}^n$, the Amador-Kähler coherence index satisfies
+For every admissible vector $x\in\mathbb{R}_{>0}^n$, the coherence index satisfies
 \begin{equation}
-0\le \mathcal{K}(x) < 1.
+0\le \mathcal{K}(x)<1.
 \end{equation}
 \end{theorem}
-
 \begin{proof}
-Set
+Let
 \begin{equation}
 \alpha = \frac{\mathcal{D}(x)}{\max\{1,n\}}.
 \end{equation}
-By Theorem 1, $\alpha\ge 0$. Hence $e^{-\alpha}\in (0,1]$. Consequently,
+Since $\mathcal{D}(x)\ge 0$, we have $\alpha\ge 0$. Thus $e^{-\alpha}\in (0,1]$, and
 \begin{equation}
 \mathcal{K}(x)=1-e^{-\alpha}.
 \end{equation}
-Since $e^{-\alpha}>0$, we have $\mathcal{K}(x)<1$. Since $e^{-\alpha}\le 1$, we also have $\mathcal{K}(x)\ge 0$. Therefore $0\le\mathcal{K}(x)<1$.
+Consequently $\mathcal{K}(x)\ge 0$ and $\mathcal{K}(x)<1$.
 \end{proof}
 
 \begin{proposition}
 If $x=(c,\ldots,c)$ with $n$ identical positive entries, then
 \begin{equation}
-\mathcal{D}(x)=\frac{n c^2}{n c + 1}.
-\end{equation}
-Moreover, this quantity is strictly increasing in $c$ for every fixed $n\ge 1$.
-\end{proposition}
-
-\begin{proof}
-If all components equal $c$, then
-\begin{equation}
-E(x)=\sum_{i=1}^{n}c^2 = n c^2,
-\qquad
-T(x)=\sum_{i=1}^{n}c = n c.
-\end{equation}
-Hence,
-\begin{equation}
 \mathcal{D}(x)=\frac{n c^2}{n c +1}.
 \end{equation}
-Differentiating with respect to $c$ yields
+Moreover, this quantity is strictly increasing in $c$ for each fixed $n\ge 1$.
+\end{proposition}
+\begin{proof}
+Since $E(x)=nc^2$ and $T(x)=nc$, we obtain
 \begin{equation}
-\frac{d}{dc}\mathcal{D}(x)
-=\frac{n c (n c + 2)}{(n c + 1)^2}>0,
+\mathcal{D}(x)=\frac{nc^2}{nc+1}.
 \end{equation}
-which proves strict monotonicity.
+Differentiation yields
+\begin{equation}
+\frac{d}{dc}\mathcal{D}(x)=\frac{nc(nc+2)}{(nc+1)^2}>0.
+\end{equation}
+Hence the decomposition index is strictly increasing in $c$.
 \end{proof}
 
 \begin{corollary}
 In the uniform regime, the coherence index $\mathcal{K}(x)$ is also monotone increasing in $c$.
 \end{corollary}
-
 \begin{proof}
-Since $\mathcal{K}(x)=1-e^{-\mathcal{D}(x)/\max\{1,n\}}$ and the exponential map is monotone decreasing, increasing $\mathcal{D}(x)$ increases $\mathcal{K}(x)$.
+Since $\mathcal{K}(x)=1-e^{-\mathcal{D}(x)/\max\{1,n\}}$, an increase in $\mathcal{D}(x)$ produces an increase in $\mathcal{K}(x)$.
 \end{proof}
 
-\section{Scientific Interpretation}
-The formalism above offers a compact model for assessing how dispersed or concentrated a positive vector is relative to its total mass. The quantity $E(x)$ acts as a quadratic energy term, while $T(x)+1$ regulates the scaling to preserve regularity. The resulting ratio captures the tendency of the system to concentrate magnitude within a few components, while the coherence index compresses this quantity into a normalized score.
+\section{Experimental validation}
+The model was evaluated with positive vectors of different sizes and configurations. The computations aim to confirm the theoretical claims under both general and uniform conditions.
 
-This interpretation is useful in settings where one wants to compare systems of different sizes but comparable structure. The model is especially natural in formal scientific workflows that require a scalar descriptor with well-defined bounds, monotonicity, and computational reproducibility.
+\subsection{Validation criteria}
+Each test verifies the following conditions:
+\begin{enumerate}[label=\arabic*.]
+\item $\mathcal{D}(x)\ge 0$;
+\item $0\le \mathcal{K}(x)<1$;
+\item for uniform vectors: $\mathcal{D}(c,\ldots,c)=\dfrac{nc^2}{nc+1}$;
+\item the uniform family is monotone in $c$.
+\end{enumerate}
 
-\section{Numerical Results}
-The following table reports representative values computed under the proposed model.
-
+\subsection{Numerical results}
 \begin{table}[h!]
 \centering
 \begin{tabular}{lcc}
@@ -222,65 +168,43 @@ Uniform $c=2.0$, $n=10$ & 1.9047619048 & 0.1724 \\
 Uniform $c=5.0$, $n=10$ & 4.9019607843 & 0.3876 \\
 \bottomrule
 \end{tabular}
-\caption{Representative numerical results for the arithmetic decomposition and coherence measures.}
+\caption{Representative numerical validations for the proposed formalism.}
 \end{table}
 
-These values confirm the expected qualitative behavior: the measure increases with concentration and scale, while the coherence index remains bounded in $[0,1)$.
+These values demonstrate the expected behavior: decomposition and coherence increase with magnitude and concentration while remaining bounded and interpretable.
+
+\section{Interpretation and significance}
+The proposed framework can be understood as a mathematically robust measure of relative concentration within a positive system. The quadratic-energy term captures internal dispersion, while the regularized denominator prevents singular behavior at small mass. The coherence index then transforms this raw energetic measure into a normalized score that is easier to compare across systems of different size.
+
+This is particularly relevant in scientific settings where the objective is not merely to observe variation, but to express it in a bounded, interpretable, and reproducible form. The methodology remains deliberately compact, but it supports formal critique, practical computation, and future generalization.
 
 \section{Conclusion}
-This article introduces a mathematically consistent and computationally traceable framework for arithmetic decomposition and Amador-Kähler coherence analysis. The definitions are clear, the propositions are rigorous, and the theoretical structure is well adapted for both symbolic and numerical validation. The resulting model offers a compact but meaningful measure for studying structured positive data under a bounded and interpretable formulation.
+This preprint provides a minimal yet rigorous framework for arithmetic decomposition and coherence assessment. It establishes key mathematical properties, demonstrates computational validation, and preserves conceptual clarity. The model is intentionally simple and transparent, which makes it suitable for further extension in mathematical, computational, and interdisciplinary research contexts.
 
-The framework is not presented as a closed doctrine, but as a formally grounded working architecture that can be refined, generalized, and integrated into larger research programs. It is therefore appropriate for academic development, reproducible experimentation, and international scientific dissemination.
+The contribution is not intended as a static doctrine, but as a formalized working foundation that can be refined, generalized, and tested by the scientific community. The resulting structure is thus both academically useful and operationally reproducible.
 
 \appendix
-\section{Technical Appendix A: Formal derivation of the decomposition measure}
-Let $x\in\mathbb{R}_{>0}^n$. The arithmetic decomposition index is constructed from the quadratic energy $E(x)$ and the total magnitude $T(x)$. The denominator uses $T(x)+1$ instead of $T(x)$ alone to avoid singular behavior near zero and to ensure numerical continuity in low-mass regimes. This design preserves three desirable properties:
+\section{Appendix A. Technical derivation}
+Let $x\in\mathbb{R}_{>0}^n$. The decomposition index is built from the pair $(E(x), T(x))$, where $E(x)$ measures quadratic concentration and $T(x)$ measures total positive mass. The denominator is regularized as $T(x)+1$ to retain stability near zero and to avoid degenerate low-mass singularities. This gives a deterministic measure with interpretive relevance in both theoretical and computational settings.
 
+\section{Appendix B. Reproducibility protocol}
+The numerical checks follow a direct protocol:
 \begin{enumerate}[label=\arabic*.]
-\item non-negativity;
-\item bounded regularization;
-\item stability under uniform scaling in the positive domain.
+\item select or construct a strictly positive vector $x$;
+\item compute $T(x)$ and $E(x)$;
+\item evaluate $\mathcal{D}(x)$ and $\mathcal{K}(x)$;
+\item verify the inequalities and uniform formulas;
+\item record the numerical results.
 \end{enumerate}
 
-The resulting model is therefore appropriate for scientific analysis when both magnitude and concentration are relevant variables.
-
-\section{Technical Appendix B: Computational reproducibility}
-The computational experiments used the following logic:
-\begin{enumerate}[label=\arabic*.]
-\item Compute $T(x)=\sum_i x_i$;
-\item Compute $E(x)=\sum_i x_i^2$;
-\item Evaluate $\mathcal{D}(x)=E(x)/(T(x)+1)$;
-\item Evaluate $\mathcal{K}(x)=1-\exp(-\mathcal{D}(x)/\max\{1,n\})$;
-\item Check the theoretical constraints $\mathcal{D}(x)\ge 0$ and $0\le\mathcal{K}(x)<1$.
-\end{enumerate}
-
-The same logic is implemented in both Python and C++, which allows cross-language verification and improves confidence in the final results.
-
-\section{Technical Appendix C: Reproducibility protocol}
-The following protocol was used to conduct the numerical verification:
-\begin{enumerate}[label=\arabic*.]
-\item Define a positive vector $x$.
-\item Evaluate $T(x)$ and $E(x)$ using standard exact arithmetic or double precision numerical computation.
-\item Apply the formulae for $\mathcal{D}(x)$ and $\mathcal{K}(x)$ directly.
-\item Compare against the identities stated in the propositions.
-\item Record the outputs in tabular form for reproducibility.
-\end{enumerate}
-
-This protocol is intentionally minimal, transparent, and language-agnostic so that it can be independently replicated by other researchers.
-
-\section{Technical Appendix D: Source-code and implementation summary}
-The implementation files used for validation are as follows:
+\section{Appendix C. Implementation assets}
+The same protocol is implemented in both Python and C++ in the repository:
 \begin{itemize}
-\item Python proof module: \texttt{code/python/ak\_proof\_demo.py}
-\item C++ proof module: \texttt{code/cpp/ak\_proof\_demo.cpp}
+\item \texttt{code/python/ak\_proof\_demo.py}
+\item \texttt{code/cpp/ak\_proof\_demo.cpp}
 \end{itemize}
 
-Both implementations execute the same mathematically defined pipeline and confirm the following established facts:
-\begin{enumerate}[label=\arabic*.]
-\item $\mathcal{D}(x)\ge 0$;
-\item $0\le\mathcal{K}(x)<1$;
-\item the uniform case satisfies $\mathcal{D}(c,\ldots,c)=\frac{nc^2}{nc+1}$.
-\end{enumerate}
+Both versions confirm the same mathematical conclusions: positivity, boundedness, and monotonic behavior in the uniform regime.
 
 \bibliographystyle{plainnat}
 \bibliography{academic_dossier}
