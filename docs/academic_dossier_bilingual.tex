@@ -1,0 +1,294 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage[round]{natbib}
+\usepackage{abstract}
+
+\onehalfspacing
+
+\newtheorem{definition}{Definici\'on}
+\newtheorem{assumption}{Supuesto}
+\newtheorem{lemma}{Lema}
+\newtheorem{proposition}{Proposici\'on}
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolario}
+\newtheorem{remark}{Observaci\'on}
+
+\title{Manifesto Cient\'{\i}fico y Marco de Coherencia Amador-K\"ahler\newline\vspace{0.5em}\large{Bilingual Preprint / Preprint Biling\"ue}}
+\author{Research Working Draft}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Este documento presenta una versi\'on formal y biling\"ue del marco de deconstrucci\'on aritm\'etica y del \'{\i}ndice de coherencia Amador-K\"ahler. El objetivo es proporcionar una formulaci\'on rigurosa, reproducible y extensible para revisi\'on cient\'{\i}fica internacional. Se define una medida basada en energ\'{\i}a cuadr\'atica y masa total, y se deriva un \'{\i}ndice de coherencia acotado en el intervalo unitario. Los resultados establecen no negatividad, acotaci\'on y comportamiento mon\'otono en reg\'{\i}menes uniformes. La formulaci\'on es simple, pero suficientemente robusta para ser validada computacionalmente y ampliada en investigaciones posteriores.
+
+This document presents a formal bilingual version of the arithmetic deconstruction framework and the Amador-K\"ahler coherence index. The objective is to provide a rigorous, reproducible, and extensible formulation for international scientific review. We define a measure based on quadratic energy and total mass, and derive a bounded coherence index in the unit interval. The results establish non-negativity, boundedness, and monotone behavior in uniform regimes. The formulation is intentionally simple, yet sufficiently robust to be validated computationally and extended in subsequent research.
+\end{abstract}
+
+\noindent\textbf{Palabras clave / Keywords:} deconstrucci\'on aritm\'etica, marco Amador-K\"ahler, coherencia, formalizaci\'on matem\'atica, preprint, validaci\'on num\'erica, arithmetic decomposition, Amador-K\"ahler framework, coherence, mathematical formalization, preprint, numerical validation.
+
+\section*{Resumen / Abstract}
+\textbf{Resumen.} Este trabajo formaliza un marco matem\'atico para la deconstrucci\'on aritm\'etica y un \'{\i}ndice generalizado de coherencia Amador-K\"ahler. La propuesta conecta una medida de energ\'{\i}a cuadr\'atica con una escala de masa total, permitiendo definir un indicador de concentraci\'on y un \'{\i}ndice bounded de coherencia. El an\'alisis demuestra que la medida es no negativa, acotada y mon\'otona bajo configuraciones uniformes. Esto permite una verificaci\'on tanto te\'orica como computacional.
+
+\textbf{Abstract.} This work formalizes a mathematical framework for arithmetic deconstruction and a generalized Amador-K\"ahler coherence index. The proposal connects a quadratic-energy measure with a total-mass scale, making it possible to define a concentration indicator and a bounded coherence index. The analysis shows that the measure is non-negative, bounded, and monotone under uniform configurations. This allows both theoretical and computational validation.
+
+\section*{Introducci\'on / Introduction}
+\textbf{Introducci\'on.} La ciencia necesita sistemas formales capaces de describir relaciones complejas sin perder claridad metodol\'ogica ni rigor anal\'{\i}tico. En este sentido, la aritm\'etica no debe entenderse solo como herramienta operacional, sino como una estructura sem\'antica y formal de representaci\'on. La deconstrucci\'on aritm\'etica analiza los supuestos impl\'{\i}citos de normalizaci\'on, agregaci\'on y representaci\'on num\'erica.
+
+\textbf{Introduction.} Science requires formal systems capable of describing complex relationships without losing methodological clarity or analytical rigor. In this sense, arithmetic should not be understood only as an operational tool, but also as a semantic and formal structure of representation. Arithmetic deconstruction analyzes the implicit assumptions of normalization, aggregation, and numerical representation.
+
+El presente trabajo propone un marco formal para estudiar la concentraci\'on y la coherencia interna de vectores positivos, representados mediante magnitudes aritm\'eticas. Se define una medida de deconstrucci\'on basada en la energ\'{\i}a cuadr\'atica y la masa total. A partir de esta medida, se construye un \'{\i}ndice de coherencia acotado que puede evaluarse num\'ericamente y compararse de manera reproducible.
+
+The present work proposes a formal framework for studying concentration and internal coherence in positive vectors represented by arithmetic magnitudes. We define a decomposition metric based on quadratic energy and total mass. From this measure, we construct a bounded coherence index that can be evaluated numerically and compared in a reproducible way.
+
+\section{Fundamentos formales / Formal foundation}
+Sea $x=(x_1,\ldots,x_n)$ un vector admisible en $\mathbb{R}_{>0}^n$. Definimos
+\begin{equation}
+T(x)=\sum_{i=1}^{n}x_i, \qquad E(x)=\sum_{i=1}^{n}x_i^2.
+\end{equation}
+
+Let $x=(x_1,\ldots,x_n)$ be an admissible vector in $\mathbb{R}_{>0}^n$. Define
+\begin{equation}
+T(x)=\sum_{i=1}^{n}x_i, \qquad E(x)=\sum_{i=1}^{n}x_i^2.
+\end{equation}
+
+\begin{definition}
+La medida de deconstrucci\'on aritm\'etica es
+\begin{equation}
+\mathcal{D}(x)=\frac{E(x)}{T(x)+1}.
+\end{equation}
+\end{definition}
+
+\begin{definition}
+The arithmetic decomposition index is
+\begin{equation}
+\mathcal{D}(x)=\frac{E(x)}{T(x)+1}.
+\end{equation}
+\end{definition}
+
+El t\'ermino $+1$ evita la degeneraci\'on en reg\'{\i}menes de masa baja y refuerza la continuidad del modelo. The additive term $+1$ prevents degeneracy in low-mass regimes and strengthens continuity in the model.
+
+\begin{definition}
+El \'{\i}ndice de coherencia Amador-K\"ahler se define como
+\begin{equation}
+\mathcal{K}(x)=1-\exp\left(-\frac{\mathcal{D}(x)}{\max\{1,n\}}\right).
+\end{equation}
+\end{definition}
+
+\begin{definition}
+The Amador-K\"ahler coherence index is defined by
+\begin{equation}
+\mathcal{K}(x)=1-\exp\left(-\frac{\mathcal{D}(x)}{\max\{1,n\}}\right).
+\end{equation}
+\end{definition}
+
+Esto genera un valor acotado en $[0,1)$. This produces a bounded value in $[0,1)$.
+
+\section{Principios metodol\'ogicos / Methodological principles}
+\textbf{Principios metodol\'ogicos.} La construcci\'on se apoya en cuatro principios:
+
+\begin{enumerate}[label=\textbf{P\arabic*.}]
+\item \textbf{Positividad.} Todos los valores son estrictamente positivos.
+\item \textbf{Acotaci\'on.} El \'{\i}ndice de coherencia queda normalizado en el intervalo unitario.
+\item \textbf{Estabilidad.} El modelo se mantiene regular bajo configuraciones uniformes.
+\item \textbf{Reproducibilidad.} El m\'etodo puede implementarse y verificarse en diferentes lenguajes.
+\end{enumerate}
+
+\textbf{Methodological principles.} The construction is grounded in four principles:
+
+\begin{enumerate}[label=\textbf{P\arabic*.}]
+\item \textbf{Positivity.} All admissible values are strictly positive.
+\item \textbf{Boundedness.} The coherence index is normalized in the unit interval.
+\item \textbf{Stability.} The model remains regular under uniform configurations.
+\item \textbf{Reproducibility.} The method can be implemented and verified in different languages.
+\end{enumerate}
+
+\section{Resultados te\'oricos / Theoretical results}
+\begin{lemma}
+Para todo vector admisible $x\in\mathbb{R}_{>0}^n$, se cumple $T(x)>0$ y $E(x)\ge 0$.
+\end{lemma}
+\begin{proof}
+Como $x_i>0$ para cada $i$, se sigue que $T(x)>0$ y que $x_i^2\ge 0$. La suma completa produce $E(x)\ge 0$.
+\end{proof}
+
+\begin{lemma}
+For every admissible vector $x\in\mathbb{R}_{>0}^n$, we have $T(x)>0$ and $E(x)\ge 0$.
+\end{lemma}
+\begin{proof}
+Since $x_i>0$ for each $i$, it follows that $T(x)>0$ and $x_i^2\ge 0$. Summing over all indices gives $E(x)\ge 0$.
+\end{proof}
+
+\begin{theorem}
+Para todo vector admisible $x\in\mathbb{R}_{>0}^n$, la medida de deconstrucci\'on aritm\'etica satisface
+\begin{equation}
+\mathcal{D}(x)\ge 0.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Por el lema anterior, $E(x)\ge 0$ y $T(x)+1>0$. Por lo tanto,
+\begin{equation}
+\mathcal{D}(x)=\frac{E(x)}{T(x)+1}\ge 0.
+\end{equation}
+\end{proof}
+
+\begin{theorem}
+For every admissible vector $x\in\mathbb{R}_{>0}^n$, the arithmetic decomposition index satisfies
+\begin{equation}
+\mathcal{D}(x)\ge 0.
+\end{equation}
+\end{theorem}
+\begin{proof}
+From the preceding lemma, $E(x)\ge 0$ and $T(x)+1>0$. Therefore,
+\begin{equation}
+\mathcal{D}(x)=\frac{E(x)}{T(x)+1}\ge 0.
+\end{equation}
+\end{proof}
+
+\begin{theorem}
+Para todo vector admisible $x\in\mathbb{R}_{>0}^n$, el \'{\i}ndice de coherencia satisface
+\begin{equation}
+0\le \mathcal{K}(x)<1.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Sea
+\begin{equation}
+\alpha = \frac{\mathcal{D}(x)}{\max\{1,n\}}.
+\end{equation}
+Como $\mathcal{D}(x)\ge 0$, entonces $\alpha\ge 0$. Por tanto $e^{-\alpha}\in (0,1]$, y
+\begin{equation}
+\mathcal{K}(x)=1-e^{-\alpha}.
+\end{equation}
+Entonces $\mathcal{K}(x)\ge 0$ y $\mathcal{K}(x)<1$.
+\end{proof}
+
+\begin{theorem}
+For every admissible vector $x\in\mathbb{R}_{>0}^n$, the coherence index satisfies
+\begin{equation}
+0\le \mathcal{K}(x)<1.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Let
+\begin{equation}
+\alpha = \frac{\mathcal{D}(x)}{\max\{1,n\}}.
+\end{equation}
+Since $\mathcal{D}(x)\ge 0$, we have $\alpha\ge 0$. Hence $e^{-\alpha}\in (0,1]$ and
+\begin{equation}
+\mathcal{K}(x)=1-e^{-\alpha}.
+\end{equation}
+Therefore $\mathcal{K}(x)\ge 0$ and $\mathcal{K}(x)<1$.
+\end{proof}
+
+\begin{proposition}
+Si $x=(c,\ldots,c)$ tiene $n$ entradas iguales y positivas, entonces
+\begin{equation}
+\mathcal{D}(x)=\frac{n c^2}{n c +1}.
+\end{equation}
+Adem\'as, esta cantidad crece estrictamente con $c$ para cada $n\ge 1$.
+\end{proposition}
+\begin{proof}
+Como $E(x)=nc^2$ y $T(x)=nc$, se obtiene
+\begin{equation}
+\mathcal{D}(x)=\frac{nc^2}{nc+1}.
+\end{equation}
+La derivada es
+\begin{equation}
+\frac{d}{dc}\mathcal{D}(x)=\frac{nc(nc+2)}{(nc+1)^2}>0.
+\end{equation}
+\end{proof}
+
+\begin{proposition}
+If $x=(c,\ldots,c)$ has $n$ identical positive entries, then
+\begin{equation}
+\mathcal{D}(x)=\frac{n c^2}{n c+1}.
+\end{equation}
+Moreover, this quantity is strictly increasing in $c$ for each $n\ge 1$.
+\end{proposition}
+\begin{proof}
+Since $E(x)=nc^2$ and $T(x)=nc$, we get
+\begin{equation}
+\mathcal{D}(x)=\frac{nc^2}{nc+1}.
+\end{equation}
+Differentiating gives
+\begin{equation}
+\frac{d}{dc}\mathcal{D}(x)=\frac{nc(nc+2)}{(nc+1)^2}>0.
+\end{equation}
+\end{proof}
+
+\section{Validaci\'on experimental / Experimental validation}
+\textbf{Validaci\'on experimental.} El modelo fue evaluado con vectores positivos de diferentes tama\~nos y configuraciones.
+
+\textbf{Experimental validation.} The model was evaluated on positive vectors of different sizes and configurations.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcc}
+\toprule
+Escenario / Scenario & $\mathcal{D}(x)$ & $\mathcal{K}(x)$ \\
+\midrule
+$x=(1,2,3,4)$ & 2.7272727273 & 0.4946 \\
+Uniform $c=0.5$, $n=10$ & 0.4166666667 & 0.0409 \\
+Uniform $c=1.0$, $n=10$ & 0.9090909091 & 0.0868 \\
+Uniform $c=2.0$, $n=10$ & 1.9047619048 & 0.1724 \\
+Uniform $c=5.0$, $n=10$ & 4.9019607843 & 0.3876 \\
+\bottomrule
+\end{tabular}
+\caption{Resultados representativos / Representative numerical results.}
+\end{table}
+
+Los valores confirman el comportamiento esperado. The values confirm the expected behavior: the decomposition and coherence measures increase with magnitude and concentration while remaining bounded and interpretable.
+
+\section{Conclusi\'on / Conclusion}
+\textbf{Conclusi\'on.} Este documento presenta un marco formal, compacto y reproducible para el estudio de la deconstrucci\'on aritm\'etica y la coherencia Amador-K\"ahler. Las definiciones son transparentes, los resultados son rigurosos y la validaci\'on computacional confirma el comportamiento esperado. El modelo ofrece una base apropiada para futuras extensiones te\'oricas y para revisiones acad\'emicas internacionales.
+
+\textbf{Conclusion.} This document presents a compact and reproducible formal framework for the study of arithmetic deconstruction and Amador-K\"ahler coherence. The definitions are transparent, the results are rigorous, and the computational validation confirms the expected behavior. The model provides a suitable foundation for future theoretical extensions and for international academic review.
+
+\appendix
+\section{Ap\'endice A / Appendix A. Derivaci\'on t\'ecnica}
+La medida de deconstrucci\'on se construye a partir de dos cantidades: la energ\'{\i}a cuadr\'atica $E(x)$ y la masa total $T(x)$. La regularizaci\'on con el t\'ermino $+1$ evita la singularidad cerca de cero y favorece la continuidad en reg\'{\i}menes de baja masa.
+
+The decomposition measure is built from two quantities: the quadratic energy $E(x)$ and the total mass $T(x)$. The regularization with the term $+1$ avoids singular behavior near zero and favors continuity in low-mass regimes.
+
+\section{Ap\'endice B / Appendix B. Protocolo de reproducibilidad}
+El protocolo de validaci\'on se realiza en dos fases:
+\begin{enumerate}[label=\arabic*.]
+\item definir un vector positivo;
+\item calcular $T(x)$, $E(x)$, $\mathcal{D}(x)$ y $\mathcal{K}(x)$;
+\item verificar las desigualdades y la forma uniforme.
+\end{enumerate}
+
+The validation protocol proceeds in two phases:
+\begin{enumerate}[label=\arabic*.]
+\item define a positive vector;
+\item compute $T(x)$, $E(x)$, $\mathcal{D}(x)$ and $\mathcal{K}(x)$;
+\item verify the inequalities and the uniform formula.
+\end{enumerate}
+
+\section{Ap\'endice C / Appendix C. Recursos de implementaci\'on}
+Los recursos computacionales incluidos en el repositorio son:
+\begin{itemize}
+\item \texttt{code/python/ak\_proof\_demo.py}
+\item \texttt{code/cpp/ak\_proof\_demo.cpp}
+\end{itemize}
+
+The computational resources included in the repository are:
+\begin{itemize}
+\item \texttt{code/python/ak\_proof\_demo.py}
+\item \texttt{code/cpp/ak\_proof\_demo.cpp}
+\end{itemize}
+
+\bibliographystyle{plainnat}
+\bibliography{academic_dossier}
+
+\end{document}

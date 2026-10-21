@@ -1,22 +1,15 @@
-# Preprint final
+# Versión bilingüe español/inglés
 
-This repository contains the final preprint version of the scientific dossier on arithmetic decomposition and the Amador-Kähler coherence framework.
+Esta versión del repositorio contiene un manuscrito formal en español e inglés, con definiciones, teoremas, validación numérica y apéndices técnicos.
 
-## Files
+## Archivos principales
 
-- `docs/academic_dossier.tex` — final preprint manuscript
-- `docs/numeric_results.md` — numerical validation summary
-- `README.md` — repository overview
-- `code/python/ak_proof_demo.py` — Python validation
-- `code/cpp/ak_proof_demo.cpp` — C++ validation
+- `docs/academic_dossier_bilingual.tex` — manuscrito bilingüe final
+- `docs/academic_dossier.tex` — versión base (inglés / español previo)
+- `README.md` — vista general del repositorio
+- `code/python/ak_proof_demo.py` — validación en Python
+- `code/cpp/ak_proof_demo.cpp` — validación en C++
 
-## Scope of the preprint
+## Objetivo
 
-- formal definitions
-- theoretical propositions and proofs
-- experimental validation
-- numerical results
-- reproducibility protocol
-- technical appendices
-
-This version is suitable for academic review and for conversion into a publication-ready manuscript.
+La versión bilingüe está orientada a la lectura internacional y a la divulgación científica sin perder el rigor de la formulación original.
